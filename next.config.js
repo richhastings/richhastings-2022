@@ -7,5 +7,10 @@ module.exports = {
 
     return config
   },
+  sassOptions: {
+    prependData: `
+      @import '~include-media/dist/_include-media.scss';
+    `,
+  },
   reactStrictMode: true,
 }
