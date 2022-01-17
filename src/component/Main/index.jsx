@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Main.module.scss'
 
-//TRIGGER deployment
-
-const Main = ({ children }) => <main className={styles.Main}>{children}</main>
+const Main = ({ children }) => {
+  return <main className={styles.Main}>{children}</main>
+}
 
 export default Main

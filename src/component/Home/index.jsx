@@ -1,8 +1,8 @@
 import React from 'react'
 
 import GitHubSVG from '../../asset/icon/github.svg'
-import TwitterSVG from '../../asset/icon/twitter.svg'
-import InstagramSVG from '../../asset/icon/instagram.svg'
+// import TwitterSVG from '../../asset/icon/twitter.svg'
+// import InstagramSVG from '../../asset/icon/instagram.svg'
 
 import styles from './Home.module.scss'
 
@@ -13,15 +13,19 @@ const Home = () => (
       <h2>An experienced Front-end Engineer from Sherwood Forest, UK.</h2>
     </div>
     <div className={styles.Social}>
-      <a href="https://github.com/richhastings">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://github.com/richhastings"
+      >
         <GitHubSVG />
       </a>
-      <a href="https://twitter.com/sheffieldcoder">
+      {/* <a href="https://twitter.com/sheffieldcoder">
         <TwitterSVG />
       </a>
       <a href="https://www.instagram.com/thesheffieldcoder/">
         <InstagramSVG />
-      </a>
+      </a> */}
     </div>
   </>
 )
