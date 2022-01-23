@@ -1,4 +1,12 @@
 body {
   font-family: $font-body;
-  background-color: var(--color-theme);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  transition: background-color 0.4s;
+  will-change: background-color;
+}
+
+svg,
+path {
+  fill: currentColor;
 }

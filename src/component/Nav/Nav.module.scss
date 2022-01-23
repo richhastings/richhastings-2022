@@ -3,4 +3,19 @@
   padding: 20px;
   width: 100%;
   text-align: right;
+  color: inherit;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  button {
+    color: inherit;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-orange;
+    }
+  }
 }

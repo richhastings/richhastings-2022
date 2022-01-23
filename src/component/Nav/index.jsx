@@ -1,14 +1,31 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { DarkContext } from '../DarkContext'
 
 import styles from './Nav.module.scss'
+import LightModeSVG from '../../asset/icon/light-mode.svg'
+import DarkModeSVG from '../../asset/icon/dark-mode.svg'
 
 const Nav = () => {
-  const isDark = useContext(DarkContext)
+  const darkContextData = useContext(DarkContext)
+  const [mode, setMode] = useState(null)
+
+  const toggleMode = () => {
+    const isDark = mode === 'dark'
+    darkContextData.set(isDark ? 'light' : 'dark')
+  }
+
+  useEffect(() => {
+    setMode(darkContextData.value)
+  }, [darkContextData.value])
+
+  const SVGs = {
+    light: <DarkModeSVG />,
+    dark: <LightModeSVG />,
+  }
+
   return (
     <div className={styles.Nav}>
-      <p>{isDark.value ? 'Dark' : 'Light'}</p>
-      <button onClick={() => isDark.set(!isDark.value)}>clicky</button>
+      <button onClick={toggleMode}>{SVGs[mode]}</button>
     </div>
   )
 }

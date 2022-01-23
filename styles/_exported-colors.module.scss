@@ -1,0 +1,10 @@
+$colors: (
+  'light': $color-white,
+  'dark': $color-black,
+);
+
+:export {
+  @each $key, $value in $colors {
+    #{unquote($key)}: $value;
+  }
+}
